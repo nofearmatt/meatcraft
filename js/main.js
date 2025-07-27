@@ -170,8 +170,8 @@ document.addEventListener('DOMContentLoaded', function() {
         lastScrollY = currentScrollY;
     });
 
-    // Mobile menu functionality - улучшенная версия
-    const mobileMenuBtn = document.querySelector('.nav-actions .mobile-menu-btn');
+    // Mobile menu functionality - радикально исправленная версия
+    const mobileMenuBtn = document.querySelector('.nav-actions .mobile-menu-btn:first-of-type');
     const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
     const mobileMenuClose = document.querySelector('.mobile-menu-close');
     const mobileMenuLinks = document.querySelectorAll('.mobile-nav-section a');
@@ -239,15 +239,28 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('🔍 Debug: Найден оверлей мобильного меню:', !!mobileMenuOverlay);
     console.log('🔍 Debug: Найдена кнопка закрытия:', !!mobileMenuClose);
     
-    // Проверяем на дублирующиеся элементы
+    // РАДИКАЛЬНАЯ очистка от дублирующихся элементов
     const allMobileButtons = document.querySelectorAll('.mobile-menu-btn');
+    console.log('🔍 Всего найдено кнопок мобильного меню:', allMobileButtons.length);
+    
     if (allMobileButtons.length > 1) {
-        console.warn('⚠️ Найдено несколько кнопок мобильного меню:', allMobileButtons.length);
-        // Скрываем дублирующиеся кнопки
-        allMobileButtons.forEach((btn, index) => {
-            if (index > 0) {
-                btn.style.display = 'none';
+        console.warn('⚠️ Найдено несколько кнопок мобильного меню, удаляем дубликаты...');
+        
+        // Находим правильную кнопку (в nav-actions)
+        const correctBtn = document.querySelector('.nav-actions .mobile-menu-btn');
+        
+        // Удаляем ВСЕ остальные кнопки из DOM
+        allMobileButtons.forEach((btn) => {
+            if (btn !== correctBtn) {
+                console.log('🗑️ Удаляем дублирующуюся кнопку:', btn);
+                btn.remove();
             }
         });
+        
+        console.log('✅ Очистка завершена. Осталось кнопок:', document.querySelectorAll('.mobile-menu-btn').length);
     }
+    
+    // Еще раз проверяем, что у нас есть рабочая кнопка
+    const finalBtn = document.querySelector('.nav-actions .mobile-menu-btn');
+    console.log('🎯 Финальная кнопка найдена:', !!finalBtn);
 }); 

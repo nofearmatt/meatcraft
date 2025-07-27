@@ -803,10 +803,10 @@ a {
     right: 20px;
     background: none;
     border: none;
-    font-size: 24px;
+    font-size: 28px;
     color: var(--color-iron-black);
     cursor: pointer;
-    padding: 10px;
+    padding: 0;
     line-height: 1;
     z-index: 10;
     width: 44px;
@@ -815,6 +815,17 @@ a {
     align-items: center;
     justify-content: center;
     font-family: Arial, sans-serif;
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+.mobile-menu-close:hover {
+    background-color: var(--color-stone-gray);
+    transform: scale(1.1);
+}
+
+.mobile-menu-close:active {
+    transform: scale(0.95);
 }
 
 .mobile-nav-sections {
@@ -875,13 +886,28 @@ a {
         display: flex;
     }
     
-    /* Убираем возможные дублирующиеся элементы */
-    .nav-menu .mobile-menu-btn {
+    /* РАДИКАЛЬНОЕ ИСПРАВЛЕНИЕ ДУБЛИРУЮЩИХСЯ ГАМБУРГЕРОВ */
+    
+    /* Скрываем ВСЕ мобильные кнопки по умолчанию */
+    .mobile-menu-btn {
         display: none !important;
     }
     
-    .nav-actions .mobile-menu-btn {
+    /* Показываем ТОЛЬКО первую кнопку в nav-actions */
+    .nav-actions .mobile-menu-btn:first-of-type {
         display: flex !important;
+    }
+    
+    /* Скрываем любые дублирующиеся кнопки */
+    .nav-actions .mobile-menu-btn:not(:first-of-type) {
+        display: none !important;
+    }
+    
+    /* Убираем возможные кнопки в других местах */
+    .nav-menu .mobile-menu-btn,
+    .nav-container > .mobile-menu-btn,
+    nav .mobile-menu-btn:not(.nav-actions .mobile-menu-btn) {
+        display: none !important;
     }
     
     .hero-main-text {
