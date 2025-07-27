@@ -886,28 +886,13 @@ a {
         display: flex;
     }
     
-    /* РАДИКАЛЬНОЕ ИСПРАВЛЕНИЕ ДУБЛИРУЮЩИХСЯ ГАМБУРГЕРОВ */
-    
-    /* Скрываем ВСЕ мобильные кнопки по умолчанию */
-    .mobile-menu-btn {
+    /* Исправление дублирующихся гамбургеров - БЕЗОПАСНАЯ версия */
+    .nav-menu .mobile-menu-btn {
         display: none !important;
     }
     
-    /* Показываем ТОЛЬКО первую кнопку в nav-actions */
-    .nav-actions .mobile-menu-btn:first-of-type {
+    .nav-actions .mobile-menu-btn {
         display: flex !important;
-    }
-    
-    /* Скрываем любые дублирующиеся кнопки */
-    .nav-actions .mobile-menu-btn:not(:first-of-type) {
-        display: none !important;
-    }
-    
-    /* Убираем возможные кнопки в других местах */
-    .nav-menu .mobile-menu-btn,
-    .nav-container > .mobile-menu-btn,
-    nav .mobile-menu-btn:not(.nav-actions .mobile-menu-btn) {
-        display: none !important;
     }
     
     .hero-main-text {
