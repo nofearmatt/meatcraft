@@ -1,0 +1,28 @@
+# Архив для деплоя
+*.zip
+
+# Системные файлы Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Системные файлы macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Логи
+*.log
+
+# Временные файлы
+*.tmp
+*.temp
+
+# Настройки редакторов
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Файлы деплоя (оставляем только для локального использования)
+README_DEPLOY.md 

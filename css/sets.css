@@ -1,0 +1,537 @@
+/* ===============================================
+   СТРАНИЦА "НАБОРЫ" - СПЕЦИАЛЬНЫЕ СТИЛИ
+   Акцент на выгоду и ценность покупки
+=============================================== */
+
+/* ОСНОВНАЯ СТРАНИЦА */
+.sets-main {
+    margin-top: 80px;
+    background-color: var(--color-stone-gray);
+    min-height: calc(100vh - 80px);
+}
+
+/* ЗАГОЛОВОК СТРАНИЦЫ */
+.sets-header {
+    padding: 80px 0;
+    background-color: var(--color-white);
+    text-align: center;
+    border-bottom: 2px solid var(--color-stone-gray);
+}
+
+.header-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.sets-title {
+    font-size: 3.2rem;
+    color: var(--color-iron-black);
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.sets-subtitle {
+    font-size: 1.3rem;
+    color: var(--color-iron-black);
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+/* КОЛЛЕКЦИЯ НАБОРОВ */
+.sets-collection {
+    padding: 100px 0;
+}
+
+/* ЭЛЕМЕНТ НАБОРА */
+.set-item {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 60px;
+    align-items: center;
+    margin-bottom: 120px;
+    background-color: var(--color-white);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(31, 31, 31, 0.1);
+    position: relative;
+    transition: var(--transition);
+}
+
+.set-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 60px rgba(31, 31, 31, 0.15);
+}
+
+.set-item:last-child {
+    margin-bottom: 0;
+}
+
+/* ОСОБЫЕ ТИПЫ НАБОРОВ */
+.set-item.featured {
+    border: 3px solid var(--color-wine-red);
+}
+
+.set-item.premium {
+    border: 3px solid var(--color-iron-black);
+    background: linear-gradient(135deg, var(--color-white) 0%, var(--color-natural-kraft) 100%);
+}
+
+/* ЧЕРЕДОВАНИЕ РАСПОЛОЖЕНИЯ */
+.set-item:nth-child(even) {
+    direction: rtl;
+}
+
+.set-item:nth-child(even) > * {
+    direction: ltr;
+}
+
+/* БЕЙДЖИ */
+.set-badge {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: var(--color-wine-red);
+    color: var(--color-white);
+    padding: 8px 16px;
+    font-family: var(--font-headings);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border-radius: var(--border-radius);
+    z-index: 2;
+    text-transform: uppercase;
+}
+
+.premium-badge {
+    background-color: var(--color-iron-black);
+}
+
+/* ВИЗУАЛЬНАЯ ЧАСТЬ */
+.set-visual {
+    height: 400px;
+    background: linear-gradient(135deg, var(--color-stone-gray) 0%, var(--color-natural-kraft) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.set-photo {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.set-image-placeholder {
+    color: var(--color-iron-black);
+    font-family: var(--font-headings);
+    font-size: 16px;
+    text-align: center;
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: 0.5px;
+    padding: 20px;
+}
+
+/* КОНТЕНТНАЯ ЧАСТЬ */
+.set-content {
+    padding: 60px;
+}
+
+.set-name {
+    font-size: 2.5rem;
+    color: var(--color-iron-black);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.set-tagline {
+    font-size: 1.2rem;
+    color: var(--color-wine-red);
+    margin-bottom: 2rem;
+    font-style: italic;
+    font-weight: 600;
+}
+
+.set-description {
+    margin-bottom: 2.5rem;
+}
+
+.set-description p {
+    font-size: 1.1rem;
+    color: var(--color-iron-black);
+    line-height: 1.7;
+}
+
+/* ДЕТАЛИ НАБОРА */
+.set-details {
+    margin-bottom: 2.5rem;
+    padding: 30px;
+    background-color: var(--color-stone-gray);
+    border-radius: var(--border-radius);
+}
+
+.detail-row {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.detail-row:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.detail-label {
+    font-family: var(--font-headings);
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--color-iron-black);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.detail-value {
+    font-size: 1rem;
+    color: var(--color-text-light);
+    line-height: 1.5;
+}
+
+/* ОСОБЫЕ ТИПЫ ДЕТАЛЕЙ */
+.detail-row.benefit {
+    background-color: rgba(123, 36, 28, 0.05);
+    padding: 15px;
+    border-radius: var(--border-radius);
+    border-bottom: none;
+    margin-bottom: 15px;
+}
+
+.detail-row.benefit .detail-label {
+    color: var(--color-wine-red);
+}
+
+.detail-row.benefit .detail-value {
+    color: var(--color-iron-black);
+    font-weight: 600;
+}
+
+.detail-row.premium-bonus {
+    background-color: rgba(31, 31, 31, 0.05);
+    padding: 15px;
+    border-radius: var(--border-radius);
+    border-bottom: none;
+}
+
+.detail-row.premium-bonus .detail-label {
+    color: var(--color-iron-black);
+}
+
+.detail-row.premium-bonus .detail-value {
+    color: var(--color-iron-black);
+    font-weight: 600;
+}
+
+/* ЦЕНООБРАЗОВАНИЕ */
+.set-pricing {
+    margin-bottom: 2.5rem;
+    text-align: center;
+    padding: 30px;
+    background: linear-gradient(135deg, var(--color-white) 0%, var(--color-natural-kraft) 100%);
+    border-radius: var(--border-radius);
+    border: 2px solid var(--color-wine-red);
+}
+
+.price-main {
+    margin-bottom: 1rem;
+}
+
+.price-current {
+    font-family: var(--font-headings);
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--color-wine-red);
+}
+
+.price-old {
+    font-family: var(--font-headings);
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--color-text-light);
+    text-decoration: line-through;
+    margin-left: 15px;
+}
+
+.price-per-item {
+    font-size: 1.1rem;
+    color: var(--color-iron-black);
+    font-weight: 600;
+}
+
+/* ДЕЙСТВИЯ */
+.set-actions {
+    text-align: center;
+}
+
+.set-buy-btn {
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 20px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.premium-btn {
+    background: linear-gradient(135deg, var(--color-wine-red) 0%, #5a1a14 100%);
+    box-shadow: 0 5px 20px rgba(123, 36, 28, 0.3);
+}
+
+.premium-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(123, 36, 28, 0.4);
+}
+
+.set-customize-link {
+    color: var(--color-iron-black);
+    font-size: 0.9rem;
+    text-decoration: underline;
+    transition: var(--transition);
+}
+
+.set-customize-link:hover {
+    color: var(--color-wine-red);
+}
+
+/* ГИД ПО ВЫБОРУ */
+.sets-guide {
+    padding: 100px 0;
+    background-color: var(--color-white);
+}
+
+.guide-content {
+    text-align: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.guide-title {
+    font-size: 2.5rem;
+    color: var(--color-iron-black);
+    margin-bottom: 3rem;
+    font-weight: 600;
+}
+
+.guide-recommendations {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-bottom: 3rem;
+}
+
+.recommendation {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 30px;
+    background-color: var(--color-stone-gray);
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+
+.recommendation:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(31, 31, 31, 0.1);
+}
+
+.rec-icon {
+    font-size: 2.5rem;
+    flex-shrink: 0;
+}
+
+.rec-content {
+    text-align: left;
+}
+
+.rec-title {
+    font-size: 1.2rem;
+    color: var(--color-iron-black);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.rec-text {
+    color: var(--color-text-light);
+    font-size: 1rem;
+    margin: 0;
+}
+
+.guide-cta {
+    margin-top: 2rem;
+}
+
+/* АДАПТИВНОСТЬ */
+@media (max-width: 1024px) {
+    .set-item {
+        grid-template-columns: 1fr;
+        gap: 0;
+        margin-bottom: 80px;
+    }
+    
+    .set-item:nth-child(even) {
+        direction: ltr;
+    }
+    
+    .set-visual {
+        height: 300px;
+    }
+    
+    .set-content {
+        padding: 40px;
+    }
+    
+    .set-name {
+        font-size: 2rem;
+    }
+    
+    .guide-recommendations {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .sets-header {
+        padding: 60px 0;
+    }
+    
+    .sets-title {
+        font-size: 2.5rem;
+    }
+    
+    .sets-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .sets-collection {
+        padding: 80px 0;
+    }
+    
+    .set-item {
+        margin-bottom: 60px;
+    }
+    
+    .set-visual {
+        height: 250px;
+    }
+    
+    .set-content {
+        padding: 30px 20px;
+    }
+    
+    .set-name {
+        font-size: 1.8rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .set-tagline {
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .set-description p {
+        font-size: 1rem;
+    }
+    
+    .set-details {
+        padding: 20px;
+        margin-bottom: 2rem;
+    }
+    
+    .detail-row {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    
+    .detail-label {
+        font-size: 0.85rem;
+    }
+    
+    .detail-value {
+        font-size: 0.95rem;
+    }
+    
+    .set-pricing {
+        padding: 20px;
+        margin-bottom: 2rem;
+    }
+    
+    .price-current {
+        font-size: 2.5rem;
+    }
+    
+    .price-old {
+        font-size: 1.5rem;
+        margin-left: 10px;
+    }
+    
+    .price-per-item {
+        font-size: 1rem;
+    }
+    
+    .set-buy-btn {
+        padding: 16px;
+        font-size: 16px;
+    }
+    
+    .sets-guide {
+        padding: 80px 0;
+    }
+    
+    .guide-title {
+        font-size: 2rem;
+    }
+    
+    .recommendation {
+        padding: 20px;
+        gap: 15px;
+    }
+    
+    .rec-title {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .sets-title {
+        font-size: 2rem;
+    }
+    
+    .set-visual {
+        height: 200px;
+    }
+    
+    .set-image-placeholder {
+        font-size: 14px;
+    }
+    
+    .set-content {
+        padding: 20px 15px;
+    }
+    
+    .set-name {
+        font-size: 1.5rem;
+    }
+    
+    .price-current {
+        font-size: 2rem;
+    }
+    
+    .price-old {
+        font-size: 1.2rem;
+    }
+} 

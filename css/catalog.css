@@ -1,0 +1,388 @@
+/* ===============================================
+   СТРАНИЦА КАТАЛОГА - СПЕЦИАЛЬНЫЕ СТИЛИ
+   Максимально чистый и функциональный каталог
+=============================================== */
+
+/* ОСНОВНОЙ КОНТЕНТ КАТАЛОГА */
+.catalog-main {
+    margin-top: 80px;
+    padding: 60px 0 100px;
+    background-color: var(--color-stone-gray);
+    min-height: calc(100vh - 80px);
+}
+
+/* ЗАГОЛОВОК И ФИЛЬТР */
+.catalog-header {
+    margin-bottom: 60px;
+    padding-bottom: 40px;
+    border-bottom: 2px solid var(--color-border);
+    background-color: var(--color-white);
+    padding: 40px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 20px rgba(31, 31, 31, 0.05);
+}
+
+.catalog-title {
+    font-size: 2.8rem;
+    text-align: left;
+    margin-bottom: 2rem;
+    color: var(--color-iron-black);
+    font-weight: 600;
+}
+
+/* ФИЛЬТР */
+.catalog-filter {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 12px 24px;
+    background-color: transparent;
+    border: 2px solid var(--color-border);
+    border-radius: var(--border-radius);
+    font-family: var(--font-headings);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-iron-black);
+    cursor: pointer;
+    transition: var(--transition);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.filter-btn:hover {
+    border-color: var(--color-wine-red);
+    color: var(--color-wine-red);
+}
+
+.filter-btn.active {
+    background-color: var(--color-wine-red);
+    border-color: var(--color-wine-red);
+    color: var(--color-white);
+}
+
+/* СЕТКА КАТАЛОГА */
+.catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+    margin-bottom: 80px;
+}
+
+/* КАРТОЧКА ТОВАРА */
+.catalog-item {
+    background-color: var(--color-white);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    transition: var(--transition);
+    position: relative;
+    border: 1px solid var(--color-border);
+    display: flex;
+    flex-direction: column;
+}
+
+.catalog-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(31, 31, 31, 0.1);
+    border-color: var(--color-wine-red);
+}
+
+/* БЕЙДЖ ПОПУЛЯРНОСТИ */
+.item-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: var(--color-wine-red);
+    color: var(--color-white);
+    padding: 6px 12px;
+    font-family: var(--font-headings);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    border-radius: var(--border-radius);
+    z-index: 2;
+    text-transform: uppercase;
+}
+
+/* ИЗОБРАЖЕНИЕ ТОВАРА */
+.item-image {
+    height: 280px;
+    background-color: var(--color-stone-gray);
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.item-photo,
+.item-hover-photo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-headings);
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-iron-black);
+    transition: var(--transition);
+    text-align: center;
+    line-height: 1.2;
+    padding: 20px;
+}
+
+.item-hover-photo {
+    opacity: 0;
+    background-color: var(--color-natural-kraft);
+    font-size: 14px;
+}
+
+.catalog-item:hover .item-hover-photo {
+    opacity: 1;
+}
+
+.catalog-item:hover .item-photo {
+    opacity: 0;
+}
+
+/* КОНТЕНТ КАРТОЧКИ */
+.item-name {
+    font-size: 1.3rem;
+    padding: 20px 20px 10px;
+    margin-bottom: 0;
+    color: var(--color-iron-black);
+    font-weight: 600;
+}
+
+.item-description {
+    padding: 0 20px;
+    font-size: 14px;
+    color: var(--color-text-light);
+    margin-bottom: 20px;
+    line-height: 1.5;
+    flex-grow: 1;
+}
+
+.item-price {
+    padding: 0 20px;
+    font-family: var(--font-headings);
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--color-wine-red);
+    margin-bottom: 20px;
+}
+
+.price-current {
+    color: var(--color-wine-red);
+}
+
+.price-old {
+    text-decoration: line-through;
+    color: var(--color-text-light);
+    font-size: 1.2rem;
+    margin-left: 8px;
+    font-weight: 400;
+}
+
+/* КНОПКА ТОВАРА */
+.item-btn {
+    width: calc(100% - 40px);
+    margin: 0 20px 20px;
+    padding: 15px;
+    background-color: var(--color-iron-black);
+    color: var(--color-white);
+    border: none;
+    border-radius: var(--border-radius);
+    font-family: var(--font-headings);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 14px;
+}
+
+.item-btn:hover {
+    background-color: var(--color-wine-red);
+    transform: translateY(-1px);
+}
+
+.item-btn.btn-primary {
+    background-color: var(--color-wine-red);
+}
+
+.item-btn.btn-primary:hover {
+    background-color: #5a1a14;
+}
+
+/* ПОМОЩЬ В ВЫБОРЕ */
+.catalog-help {
+    background-color: var(--color-white);
+    border-radius: var(--border-radius);
+    padding: 50px;
+    text-align: center;
+    box-shadow: 0 5px 30px rgba(31, 31, 31, 0.1);
+}
+
+.help-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.help-title {
+    font-size: 2.2rem;
+    color: var(--color-iron-black);
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.help-description {
+    font-size: 1.1rem;
+    color: var(--color-text-light);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.help-link {
+    display: inline-block;
+    padding: 16px 32px;
+    background-color: var(--color-wine-red);
+    color: var(--color-white);
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    font-family: var(--font-headings);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: var(--transition);
+    font-size: 14px;
+}
+
+.help-link:hover {
+    background-color: #5a1a14;
+    transform: translateY(-2px);
+}
+
+/* АНИМАЦИИ ФИЛЬТРАЦИИ */
+.catalog-item.hidden {
+    opacity: 0;
+    transform: scale(0.8);
+    pointer-events: none;
+}
+
+.catalog-item.visible {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto;
+}
+
+/* АДАПТИВНОСТЬ */
+@media (max-width: 1024px) {
+    .catalog-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 25px;
+    }
+    
+    .catalog-help {
+        padding: 40px 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .catalog-main {
+        padding: 40px 0 80px;
+    }
+    
+    .catalog-header {
+        padding: 30px 20px;
+        margin-bottom: 40px;
+    }
+    
+    .catalog-title {
+        font-size: 2.2rem;
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+    
+    .catalog-filter {
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    .filter-btn {
+        padding: 10px 16px;
+        font-size: 12px;
+    }
+    
+    .catalog-grid {
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 20px;
+    }
+    
+    .item-image {
+        height: 220px;
+    }
+    
+    .item-photo,
+    .item-hover-photo {
+        font-size: 14px;
+    }
+    
+    .item-name {
+        font-size: 1.1rem;
+        padding: 15px 15px 8px;
+    }
+    
+    .item-description {
+        padding: 0 15px;
+        font-size: 13px;
+        margin-bottom: 15px;
+    }
+    
+    .item-price {
+        padding: 0 15px;
+        font-size: 1.4rem;
+        margin-bottom: 15px;
+    }
+    
+    .item-btn {
+        width: calc(100% - 30px);
+        margin: 0 15px 15px;
+        padding: 12px;
+        font-size: 13px;
+    }
+    
+    .catalog-help {
+        padding: 30px 20px;
+    }
+    
+    .help-title {
+        font-size: 1.8rem;
+    }
+    
+    .help-description {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .catalog-filter {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .filter-btn {
+        width: 100%;
+        max-width: 200px;
+        text-align: center;
+    }
+    
+    .catalog-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+} 

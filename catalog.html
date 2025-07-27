@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог — Мясное ремесло</title>
+    <meta name="description" content="Каталог вяленого мяса премиального качества. Говядина, свинина, птица, гурме-продукты. Только мясо и специи.">
+    
+    <!-- Шрифты Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Основные стили -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/catalog.css">
+</head>
+<body>
+    <!-- Навигация -->
+    <nav class="navigation">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <div class="logo-stamp">
+                        <div class="stamp-circle">
+                            <div class="stamp-text-main">МЯСНОЕ<br>РЕМЕСЛО</div>
+                            <div class="stamp-motto">ТОЛЬКО МЯСО И СПЕЦИИ</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="nav-menu">
+                <div class="nav-section">
+                    <span class="nav-title">ВИТРИНА</span>
+                    <a href="catalog.html" class="active">Каталог</a>
+                    <a href="sets.html">Наборы</a>
+                </div>
+                <div class="nav-section">
+                    <span class="nav-title">ЦЕХ</span>
+                    <a href="philosophy.html">Наша Философия</a>
+                    <a href="standards.html">Стандарты Качества</a>
+                </div>
+                <div class="nav-section">
+                    <span class="nav-title">БИБЛИОТЕКА</span>
+                    <a href="wine-pairing.html">Мясо и Вино</a>
+                    <a href="blog.html">Все статьи</a>
+                </div>
+                <div class="nav-section">
+                    <span class="nav-title">КЛУБ</span>
+                    <a href="loyalty.html">Программа Лояльности</a>
+                    <a href="contact.html">Контакты</a>
+                </div>
+            </div>
+            
+            <div class="nav-actions">
+                <button class="cart-btn">
+                    <span class="cart-icon">🛒</span>
+                    <span class="cart-count">0</span>
+                </button>
+                <button class="profile-btn">Войти</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Основной контент -->
+    <main class="catalog-main">
+        <div class="container">
+            <!-- Заголовок и фильтр -->
+            <div class="catalog-header">
+                <h1 class="catalog-title">Каталог</h1>
+                
+                <div class="catalog-filter">
+                    <button class="filter-btn active" data-filter="all">Все товары</button>
+                    <button class="filter-btn" data-filter="sets">Наборы</button>
+                    <button class="filter-btn" data-filter="beef">Говядина</button>
+                    <button class="filter-btn" data-filter="pork">Свинина</button>
+                    <button class="filter-btn" data-filter="poultry">Птица</button>
+                    <button class="filter-btn" data-filter="gourmet">Гурмэ</button>
+                </div>
+            </div>
+
+            <!-- Сетка товаров -->
+            <div class="catalog-grid">
+                
+                <!-- Набор "Проба Мастера" -->
+                <div class="catalog-item" data-category="sets">
+                    <div class="item-badge">ПОПУЛЯРНЫЙ ВЫБОР</div>
+                    <div class="item-image">
+                        <div class="item-photo">
+                            НАБОР<br>3 УПАКОВКИ
+                        </div>
+                        <div class="item-hover-photo">
+                            Набор на столе
+                        </div>
+                    </div>
+                    <h3 class="item-name">НАБОР "ПРОБА МАСТЕРА"</h3>
+                    <p class="item-description">
+                        Говядина, Свинина, Курица. Лучший способ познакомиться с нашим ремеслом.
+                    </p>
+                    <div class="item-price">
+                        <span class="price-current">490 ₽</span>
+                        <span class="price-old">585 ₽</span>
+                    </div>
+                    <button class="item-btn btn-primary">Попробовать</button>
+                </div>
+
+                <!-- Говядина классическая -->
+                <div class="catalog-item" data-category="beef">
+                    <div class="item-image">
+                        <div class="item-photo">
+                            ГОВЯДИНА<br>КЛАССИЧЕСКАЯ
+                        </div>
+                        <div class="item-hover-photo">
+                            Упаковка в руке
+                        </div>
+                    </div>
+                    <h3 class="item-name">ВЯЛЕНАЯ ГОВЯДИНА: КЛАССИЧЕСКАЯ</h3>
+                    <p class="item-description">
+                        Насыщенный, умеренно соленый вкус настоящего мяса с нотами черного перца.
+                    </p>
+                    <div class="item-price">195 ₽</div>
+                    <button class="item-btn">Купить</button>
+                </div>
+
+                <!-- Говядина острая -->
+                <div class="catalog-item" data-category="beef">
+                    <div class="item-image">
+                        <div class="item-photo">
+                            ГОВЯДИНА<br>ОСТРАЯ
+                        </div>
+                        <div class="item-hover-photo">
+                            Упаковка в руке
+                        </div>
+                    </div>
+                    <h3 class="item-name">ВЯЛЕНАЯ ГОВЯДИНА: ОСТРАЯ</h3>
+                    <p class="item-description">
+                        Мощный вкус с добавлением жгучего красного перца. Для любителей острых ощущений.
+                    </p>
+                    <div class="item-price">195 ₽</div>
+                    <button class="item-btn">Купить</button>
+                </div>
+
+                <!-- Свинина пряная -->
+                <div class="catalog-item" data-category="pork">
+                    <div class="item-image">
+                        <div class="item-photo">
+                            СВИНИНА<br>ПРЯНАЯ
+                        </div>
+                        <div class="item-hover-photo">
+                            Упаковка в руке
+                        </div>
+                    </div>
+                    <h3 class="item-name">ВЯЛЕНАЯ СВИНИНА: ПРЯНАЯ</h3>
+                    <p class="item-description">
+                        Деликатная нежность свинины с букетом ароматных специй и легкой сладостью.
+                    </p>
+                    <div class="item-price">185 ₽</div>
+                    <button class="item-btn">Купить</button>
+                </div>
+
+                <!-- Курица классическая -->
+                <div class="catalog-item" data-category="poultry">
+                    <div class="item-image">
+                        <div class="item-photo">
+                            КУРИЦА<br>КЛАССИЧЕСКАЯ
+                        </div>
+                        <div class="item-hover-photo">
+                            Упаковка в руке
+                        </div>
+                    </div>
+                    <h3 class="item-name">ВЯЛЕНАЯ КУРИЦА: КЛАССИЧЕСКАЯ</h3>
+                    <p class="item-description">
+                        Нежная текстура и чистый вкус отборной куриной грудки с травами.
+                    </p>
+                    <div class="item-price">175 ₽</div>
+                    <button class="item-btn">Купить</button>
+                </div>
+
+                <!-- Индейка с розмарином -->
+                <div class="catalog-item" data-category="poultry">
+                    <div class="item-image">
+                        <div class="item-photo">
+                            ИНДЕЙКА<br>С РОЗМАРИНОМ
+                        </div>
+                        <div class="item-hover-photo">
+                            Упаковка в руке
+                        </div>
+                    </div>
+                    <h3 class="item-name">ВЯЛЕНАЯ ИНДЕЙКА: С РОЗМАРИНОМ</h3>
+                    <p class="item-description">
+                        Благородный вкус индейки с ароматом средиземноморских трав.
+                    </p>
+                    <div class="item-price">210 ₽</div>
+                    <button class="item-btn">Купить</button>
+                </div>
+
+                <!-- Утка пряная -->
+                <div class="catalog-item" data-category="gourmet">
+                    <div class="item-image">
+                        <div class="item-photo">
+                            УТКА<br>ПРЯНАЯ
+                        </div>
+                        <div class="item-hover-photo">
+                            Упаковка в руке
+                        </div>
+                    </div>
+                    <h3 class="item-name">ВЯЛЕНАЯ УТКА: ПРЯНАЯ</h3>
+                    <p class="item-description">
+                        Сложный, богатый вкус с ароматом диких трав и легкой сладостью.
+                    </p>
+                    <div class="item-price">230 ₽</div>
+                    <button class="item-btn">Купить</button>
+                </div>
+
+                <!-- Конина традиционная -->
+                <div class="catalog-item" data-category="gourmet">
+                    <div class="item-image">
+                        <div class="item-photo">
+                            КОНИНА<br>ТРАДИЦИОННАЯ
+                        </div>
+                        <div class="item-hover-photo">
+                            Упаковка в руке
+                        </div>
+                    </div>
+                    <h3 class="item-name">ВЯЛЕНАЯ КОНИНА: ТРАДИЦИОННАЯ</h3>
+                    <p class="item-description">
+                        Древний деликатес степных народов. Глубокий, насыщенный вкус для истинных ценителей.
+                    </p>
+                    <div class="item-price">250 ₽</div>
+                    <button class="item-btn">Купить</button>
+                </div>
+
+                <!-- Набор "Запас Ремесленника" -->
+                <div class="catalog-item" data-category="sets">
+                    <div class="item-image">
+                        <div class="item-photo">
+                            НАБОР<br>6 УПАКОВОК
+                        </div>
+                        <div class="item-hover-photo">
+                            Стопка упаковок
+                        </div>
+                    </div>
+                    <h3 class="item-name">НАБОР "ЗАПАС РЕМЕСЛЕННИКА"</h3>
+                    <p class="item-description">
+                        Стратегический запас на несколько недель. Выберите состав по своему вкусу.
+                    </p>
+                    <div class="item-price">
+                        <span class="price-current">920 ₽</span>
+                        <span class="price-old">1160 ₽</span>
+                    </div>
+                    <button class="item-btn btn-primary">Подробнее</button>
+                </div>
+
+                <!-- Набор "Ящик Мастера" -->
+                <div class="catalog-item" data-category="sets">
+                    <div class="item-image">
+                        <div class="item-photo">
+                            НАБОР<br>9 УПАКОВОК
+                        </div>
+                        <div class="item-hover-photo">
+                            Крафтовый ящик
+                        </div>
+                    </div>
+                    <h3 class="item-name">НАБОР "ЯЩИК МАСТЕРА"</h3>
+                    <p class="item-description">
+                        Максимум вкуса и выгоды. Идеально для больших компаний и в подарок.
+                    </p>
+                    <div class="item-price">
+                        <span class="price-current">1290 ₽</span>
+                        <span class="price-old">1740 ₽</span>
+                    </div>
+                    <button class="item-btn btn-primary">Это мой выбор</button>
+                </div>
+            </div>
+
+            <!-- Помощь в выборе -->
+            <div class="catalog-help">
+                <div class="help-content">
+                    <h2 class="help-title">Не можете определиться с выбором?</h2>
+                    <p class="help-description">
+                        Начните с нашего бестселлера — Набора "Проба Мастера".<br>
+                        В нем мы собрали три наших самых популярных вкуса, которые дают полное представление о качестве "Мясного ремесла". Это проверенный выбор сотен наших клиентов.
+                    </p>
+                    <a href="sets.html" class="help-link">Узнать больше о Наборе "Проба Мастера"</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Подвал -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="logo-stamp">
+                            <div class="stamp-circle">
+                                <div class="stamp-text-main">МЯСНОЕ<br>РЕМЕСЛО</div>
+                                <div class="stamp-motto">ТОЛЬКО МЯСО И СПЕЦИИ</div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="footer-description">Вяленое мясо премиального качества. Честное ремесло с 2024 года.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Каталог</h4>
+                    <ul>
+                        <li><a href="catalog.html">Все товары</a></li>
+                        <li><a href="sets.html">Наборы</a></li>
+                        <li><a href="catalog.html#beef">Говядина</a></li>
+                        <li><a href="catalog.html#poultry">Птица</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>О нас</h4>
+                    <ul>
+                        <li><a href="philosophy.html">Наша философия</a></li>
+                        <li><a href="standards.html">Стандарты качества</a></li>
+                        <li><a href="team.html">Команда</a></li>
+                        <li><a href="certificates.html">Сертификаты</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Клиентам</h4>
+                    <ul>
+                        <li><a href="loyalty.html">Программа лояльности</a></li>
+                        <li><a href="delivery.html">Доставка и оплата</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="contact.html">Контакты</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Мясное ремесло. Все права защищены.</p>
+                <div class="footer-legal">
+                    <a href="privacy.html">Политика конфиденциальности</a>
+                    <a href="terms.html">Пользовательское соглашение</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/catalog.js"></script>
+</body>
+</html> 
