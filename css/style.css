@@ -731,6 +731,11 @@ a {
     padding: 8px;
     cursor: pointer;
     z-index: 1001;
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
 }
 
 .hamburger-line {
@@ -739,6 +744,8 @@ a {
     background-color: var(--color-iron-black);
     transition: var(--transition);
     border-radius: 2px;
+    display: block;
+    position: relative;
 }
 
 .mobile-menu-btn.active .hamburger-line:nth-child(1) {
@@ -802,6 +809,12 @@ a {
     padding: 10px;
     line-height: 1;
     z-index: 10;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, sans-serif;
 }
 
 .mobile-nav-sections {
@@ -860,6 +873,15 @@ a {
     
     .mobile-menu-btn {
         display: flex;
+    }
+    
+    /* Убираем возможные дублирующиеся элементы */
+    .nav-menu .mobile-menu-btn {
+        display: none !important;
+    }
+    
+    .nav-actions .mobile-menu-btn {
+        display: flex !important;
     }
     
     .hero-main-text {

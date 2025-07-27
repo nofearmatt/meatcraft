@@ -170,8 +170,8 @@ document.addEventListener('DOMContentLoaded', function() {
         lastScrollY = currentScrollY;
     });
 
-    // Mobile menu functionality
-    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    // Mobile menu functionality - улучшенная версия
+    const mobileMenuBtn = document.querySelector('.nav-actions .mobile-menu-btn');
     const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
     const mobileMenuClose = document.querySelector('.mobile-menu-close');
     const mobileMenuLinks = document.querySelectorAll('.mobile-nav-section a');
@@ -188,9 +188,15 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.style.overflow = ''; // Восстанавливаем скроллинг
     }
 
-    // Открытие меню по клику на гамбургер
+    // Открытие меню по клику на гамбургер - с дополнительной защитой
     if (mobileMenuBtn) {
-        mobileMenuBtn.addEventListener('click', openMobileMenu);
+        // Убираем старые обработчики если есть
+        mobileMenuBtn.removeEventListener('click', openMobileMenu);
+        mobileMenuBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            openMobileMenu();
+        });
     }
 
     // Закрытие меню по клику на крестик
@@ -227,5 +233,21 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    // Отладочная информация
     console.log('🥩 Мясное ремесло загружено! Мобильное меню готово к работе!');
+    console.log('🔍 Debug: Найдена кнопка мобильного меню:', !!mobileMenuBtn);
+    console.log('🔍 Debug: Найден оверлей мобильного меню:', !!mobileMenuOverlay);
+    console.log('🔍 Debug: Найдена кнопка закрытия:', !!mobileMenuClose);
+    
+    // Проверяем на дублирующиеся элементы
+    const allMobileButtons = document.querySelectorAll('.mobile-menu-btn');
+    if (allMobileButtons.length > 1) {
+        console.warn('⚠️ Найдено несколько кнопок мобильного меню:', allMobileButtons.length);
+        // Скрываем дублирующиеся кнопки
+        allMobileButtons.forEach((btn, index) => {
+            if (index > 0) {
+                btn.style.display = 'none';
+            }
+        });
+    }
 }); 
